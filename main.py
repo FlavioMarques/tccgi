@@ -5,7 +5,8 @@ import seaborn as sns
 from PIL import Image
 
 # Security
-#passlib,hashlib,bcrypt,scrypt
+# passlib,hashlib,bcrypt,scrypt
+
 import hashlib
 
 bg_color = st.get_option("theme.backgroundColor")
@@ -137,10 +138,10 @@ def main(bg_color=grid_color):
 					# Derde grafiek: Top 5 verkochte producten
 					st.subheader("5 produtos mais vendidos")
 					product_data = pd.DataFrame({
-						"Produto": ["Produto A", "Produto B", "Produto C", "Produto D", "Produto E"],
-						"Preço": [100, 200, 150, 250, 300],
-						"Quantidade vendida": [50, 30, 20, 10, 5],
-						"Receita": [5000, 6000, 3000, 2500, 1500]
+						"Produto": ["Botijão 2KG", "Botijão 13KG", "Botijão 45KG"],
+						"Preço": [100, 200, 350],
+						"Quantidade vendida": [50, 30, 20],
+						"Receita": [5000, 6000, 7000]
 					})
 
 					# Verberg indexkolom bij het weergeven van het DataFrame
@@ -151,10 +152,10 @@ def main(bg_color=grid_color):
 					st.header("Produtos devolvidos")
 					terugstuur_oorzaken = ["Quebrado", "Diferente do esperado", "Sem motivo"]
 					terugstuur_data = pd.DataFrame({
-						"Produto": ["Produto A", "Produto B", "Produto C", "Produto D", "Produto E"],
-						"Quebrado": [10, 15, 20, 12, 8],
-						"Diferente do esperado": [5, 8, 10, 4, 2],
-						"Sem motivo": [7, 10, 15, 8, 5]
+						"Produto": ["Botijão 2KG", "Botijão 13KG", "Botijão 45KG"],
+						"Quebrado": [10, 15, 20],
+						"Diferente do esperado": [5, 8, 10],
+						"Sem motivo": [7, 10, 15]
 					})
 
 					fig, ax = plt.subplots(figsize=(7, 4))
@@ -194,7 +195,6 @@ def main(bg_color=grid_color):
 			add_userdata(new_user,make_hashes(new_password))
 			st.success("Você criou com sucesso uma conta válida")
 			st.info("Vá para o menu Login para fazer o login")
-
 
 
 if __name__ == '__main__':
